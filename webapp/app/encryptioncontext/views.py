@@ -55,10 +55,9 @@ def authenticate(request):
                 userid=account_in_db.userid
                 if acct.userid==userid:
                     return render(request,'authenticatesuccess.html',{})
-                else:
-                    form.add_error('account_number',"Account number entered incorrectly")
-                    context={'form':form}
-                    return render(request,"authenticate.html",context)
+                form.add_error('account_number',"Account number entered incorrectly")
+                context={'form':form}
+                return render(request,"authenticate.html",context)
 
     if request.method=='GET':
         form=CustomerProfileForm()

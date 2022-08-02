@@ -34,7 +34,7 @@ def create(event, context):
         )
         database_resource_id=response["DBInstances"][0]["DbiResourceId"]
 
-    logger.info("DbiResourceId={}".format(database_resource_id))
+    logger.info(f"DbiResourceId={database_resource_id}")
     helper.Data.update({"DbiResourceId": database_resource_id})
     return None
 
